@@ -864,6 +864,7 @@ header {
     box-shadow: 0 2px 5px rgba(150, 150, 150, 0.89); /* Sjena ispod kutije */
     margin-bottom: 20px; /* Dodajte razmak između kutija */
     border-radius: 10px;
+    position: relative;
 
 }
 
@@ -925,6 +926,8 @@ header {
     text-align: center;
     position: absolute;
     bottom: 5px; /* Razmak od dna boxa */
+    left: 0;
+    width: 100%; /* Osigurava da se element širi preko cele širine boxa */
 }
 
 .job-title {
@@ -933,7 +936,7 @@ header {
     position: absolute;
     bottom: 30px; /* Razmak od dna boxa, iznad lokacije */
     left: 0;
-    width: 100%;
+    width: 100%; /* Osigurava da se element širi preko cele širine boxa */
     text-decoration: none; /* Uklanja podvlačenje */
 }
 
@@ -953,7 +956,7 @@ header {
 
 /* Osiguravanje da slike u job-item budu unutar okvira */
 #premium-jobs-list .job-item img {
-    max-width: 50%; /* Maksimalna širina slike, INDEX */
+    max-width: 90%; /* Maksimalna širina slike, INDEX */
     max-height: 80%; /* Maksimalna visina slike */
     object-fit: contain; /* Prilagodba slike u okvir */
 }
