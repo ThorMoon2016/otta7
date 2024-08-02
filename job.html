@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <div class="nav-icons">
+            <a class="nav-icon" href="index.html">
+                <span class="material-icons">home</span>
+                <p>Home</p>
+            </a>
+            <a class="nav-icon" href="jobs.html">
+                <span class="material-icons">work</span>
+                <p>Jobs</p>
+            </a>
+            <a class="nav-icon" href="inbox.html">
+                <span class="material-icons">inbox</span>
+                <p>Inbox</p>
+            </a>
+            <a class="nav-icon" href="profile.html">
+                <span class="material-icons">person</span>
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+
+    <div class="premium-section">
+        <div class="premium-header">Premium Poslovi</div>
+        <div class="slider">
+            <div class="premium-job-container" id="premium-jobs">
+                <!-- Premium jobs will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Lijevi boxevi -->
+        <div class="left-boxes">
+            <!-- Box 1: Role -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Opis posla</div>
+                <div class="box-description">
+                    <ul id="role-description">
+                        <!-- Dinamički unos opisa rola -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 2: Who you are -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title gray-text">Ko se moze prijaviti</div>
+                <div class="box-description">
+                    <ul id="who-you-are-description">
+                        <!-- Dinamički unos opisa "who you are" -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Desni boxevi -->
+        <div class="right-boxes">
+            <!-- Box 3: Insights -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Uvid u kompaniju</div>
+                <div class="box-description">
+                    <ul id="insights-description">
+                        <!-- Dinamički unos opisa insights-a -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 4: Company -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">O kompaniji</div>
+                <div class="box-description">
+                    <ul id="company-description">
+                        <!-- Dinamički unos opisa kompanije -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 5: Otta's take -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Nase misljenje</div>
+                <div class="box-description">
+                    <ul id="ottas-take-description">
+                        <!-- Dinamički unos Otta's take-a -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application form modal -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Prijavi se za posao</h2>
+            <form id="application-form">
+                <label for="fullName">Ime i prezime:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="city">Grad:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="phone">Broj telefona:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="cv">CV:</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+                <button type="submit">Pošalji prijavu</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script section at the end of the body -->
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, doc, getDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsxHyLhgO431nUsiDhbB1hEl6kInFyM4M",
+            authDomain: "otta-3cdee.firebaseapp.com",
+            projectId: "otta-3cdee",
+            storageBucket: "otta-3cdee.appspot.com",
+            messagingSenderId: "26438532445",
+            appId: "1:26438532445:web:20c16562dab232ff0abcb4",
+            measurementId: "G-N5ZV6N82X0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        // Function to get job ID from URL
+        function getJobIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        // Function to fetch and display job details
+        async function fetchJobDetails(jobId) {
+            const docRef = doc(db, "jobs", jobId);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                const jobData = docSnap.data();
+
+                // Display premium job
+                const premiumJobsContainer = document.getElementById('premium-jobs');
+                premiumJobsContainer.innerHTML = ''; // Clear existing content
+
+                const premiumJobBox = document.createElement('div');
+                premiumJobBox.className = "premium-job-box active";
+                premiumJobBox.innerHTML = `
+                    <div class="premium-job-content">
+                        <div class="left-column">
+                            <div class="premium-job-title">${jobData.title || "No title"}</div>
+                            <div class="premium-job-salary">
+                                <div class="salary-box">
+                                    <span class="material-icons">attach_money</span>
+                                    ${jobData.salary || "N/A"}
+                                </div>
+                                <div class="salary-info">${jobData.salaryInfo || ""}</div>
+                            </div>
+                            <div class="premium-job-skills">
+                                ${jobData.skills ? jobData.skills.map(skill => `<div class="skill-box"><span class="material-icons">build</span>${skill}</div>`).join('') : ''}
+                            </div>
+                            <div class="premium-job-location">
+                                <div class="location-box">
+                                    <span class="material-icons">location_on</span>
+                                    ${jobData.location || "N/A"}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-column">
+                            <img src="${jobData.companyLogo || 'images/default-company-logo.png'}" alt="Company Logo" class="company-logo">
+                            <div class="company-name">${jobData.companyName || "Unknown Company"}</div>
+                            <div class="company-size">${jobData.companySize || "N/A"}</div>
+                            <button class="apply-button" onclick="openModal()">Prijavi se na oglas</button>
+                        </div>
+                    </div>
+                `;
+                premiumJobsContainer.appendChild(premiumJobBox);
+
+                // Update job details boxes
+                document.getElementById('role-description').innerHTML = `<li>${jobData.roleDescription || "No role description"}</li>`;
+                document.getElementById('who-you-are-description').innerHTML = `<li>${jobData.whoYouAre || "No information"}</li>`;
+                document.getElementById('insights-description').innerHTML = `<li>${jobData.insights || "No insights"}</li>`;
+                document.getElementById('company-description').innerHTML = `<li>${jobData.companyDescription || "No company description"}</li>`;
+                document.getElementById('ottas-take-description').innerHTML = `<li>${jobData.ottasTake || "No Otta's take"}</li>`;
+            } else {
+                console.log("No such document!");
+            }
+        }
+
+        // Fetch and display job details on page load
+        const jobId = getJobIdFromUrl();
+        if (jobId) {
+            fetchJobDetails(jobId);
+        }
+
+        // Function to handle form submission
+        async function submitApplication(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const city = document.getElementById('city').value;
+            const phone = document.getElementById('phone').value;
+            const cvFile = document.getElementById('cv').files[0];
+
+            try {
+                // Upload CV file to Firebase Storage
+                let cvUrl = '';
+                if (cvFile) {
+                    const storageRef = ref(storage, 'cv/' + new Date().getTime() + '-' + cvFile.name);
+                    await uploadBytes(storageRef, cvFile);
+                    cvUrl = await getDownloadURL(storageRef);
+                }
+
+                // Add application data to Firestore
+                const applicationsCollection = collection(db, 'applications');
+                await addDoc(applicationsCollection, {
+                    fullName: fullName,
+                    email: email,
+                    city: city,
+                    phone: phone,
+                    cvUrl: cvUrl,
+                    jobId: jobId,
+                    appliedAt: new Date()
+                });
+
+                alert('Your application has been submitted successfully!');
+                document.getElementById('application-form').reset();
+                closeModal();
+            } catch (error) {
+                console.error('Error submitting application:', error);
+                alert('There was an error submitting your application. Please try again.');
+            }
+        }
+
+        // Attach event listener to the application form
+        document.getElementById('application-form').addEventListener('submit', submitApplication);
+
+        // Function to open the modal
+        window.openModal = function() {
+            const modal = document.getElementById('application-modal');
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        window.closeModal = function() {
+            const modal = document.getElementById('application-modal');
+            modal.style.display = "none";
+        }
+
+        // Close the modal when the user clicks on <span> (x)
+        document.getElementById('close-modal').onclick = function() {
+            closeModal();
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('application-modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+    </script>
+</body>
+</html>

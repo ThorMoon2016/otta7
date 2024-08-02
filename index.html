@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <div class="nav-icons">
+            <a class="nav-icon" href="index.html">
+                <span class="material-icons">home</span>
+                <p>Home</p>
+            </a>
+            <a class="nav-icon" href="jobs.html">
+                <span class="material-icons">work</span>
+                <p>Jobs</p>
+            </a>
+            <a class="nav-icon" href="inbox.html">
+                <span class="material-icons">inbox</span>
+                <p>Inbox</p>
+            </a>
+            <a class="nav-icon" href="profile.html">
+                <span class="material-icons">person</span>
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="job-container">
+            <div class="job-content">
+                <div class="job-box">
+                    <p class="job-description">IT</p>
+                    <span class="job-number" style="background-color: #FF6347;">1</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Administracija</p>
+                    <span class="job-number" style="background-color: #FFD700;">2</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Građevina</p>
+                    <span class="job-number" style="background-color: #ADFF2F;">3</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Turizam</p>
+                    <span class="job-number" style="background-color: #00FA9A;">4</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Proizvodnja</p>
+                    <span class="job-number" style="background-color: #00CED1;">5</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Menadžment</p>
+                    <span class="job-number" style="background-color: #1E90FF;">6</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Ugostiteljstvo</p>
+                    <span class="job-number" style="background-color: #9370DB;">7</span>
+                </div>
+                <div class="job-box">
+                    <p class="job-description">Zdravstvo</p>
+                    <span class="job-number" style="background-color: #FF69B4;">8</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <!-- Nova sekcija za prikaz premium poslova -->
+<div id="premium-jobs-section" style="text-align: center;">
+    <h2>Premium poslovi</h2>
+    <div id="premium-jobs-list" class="jobs-list">
+        <!-- Premium poslovi će biti dinamički ubačeni ovdje -->
+    </div>
+</div>
+
+<div class="search-box">
+    <input type="text" placeholder="Unesi ključnu riječ (pozicija, kompanija...)" class="search-input">
+    <div class="custom-dropdown">
+        <div class="dropdown-label">Odaberi kategoriju</div>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="administracija"> Administracija</label>
+            <label><input type="checkbox" value="arhitektura"> Arhitektura</label>
+            <label><input type="checkbox" value="bankarstvo"> Bankarstvo</label>
+            <label><input type="checkbox" value="farmacija"> Farmacija</label>
+            <label><input type="checkbox" value="proizvodnja"> Proizvodnja</label>
+            <label><input type="checkbox" value="drzavna sluzba"> Državna služba</label>
+            <label><input type="checkbox" value="ekologija"> Ekologija</label>
+            <label><input type="checkbox" value="ekonomija finansije racunovodstvo"> Ekonomija, finansije i računovodstvo</label>
+            <label><input type="checkbox" value="elektrotehnika"> Elektrotehnika</label>
+            <label><input type="checkbox" value="energetika"> Energetika</label>
+            <label><input type="checkbox" value="graficki dizajn"> Grafički dizajn</label>
+            <label><input type="checkbox" value="gradjevina"> Građevina</label>
+            <label><input type="checkbox" value="it"> IT</label>
+            <label><input type="checkbox" value="komercijala"> Komercijala - Prodaja</label>
+            <label><input type="checkbox" value="konsalting"> Konsalting</label>
+            <label><input type="checkbox" value="ljepota"> Ljepota i zdravlje</label>
+            <label><input type="checkbox" value="marketing-pr"> Marketing-PR</label>
+            <label><input type="checkbox" value="mediji"> Mediji</label>
+            <label><input type="checkbox" value="menadzment"> Menadžment i upravljanje</label>
+            <label><input type="checkbox" value="nekretnine"> Nekretnine</label>
+            <label><input type="checkbox" value="osiguranje"> Osiguranje</label>
+            <label><input type="checkbox" value="poljoprivreda"> Poljoprivreda</label>
+            <label><input type="checkbox" value="pravo"> Pravo</label>
+            <label><input type="checkbox" value="prevoditelj"> Prevoditeljske usluge</label>
+            <label><input type="checkbox" value="transport"> Transport</label>
+            <label><input type="checkbox" value="turizam"> Turizam</label>
+            <label><input type="checkbox" value="ugostiteljstvo"> Ugostiteljstvo</label>
+            <label><input type="checkbox" value="umjetnost"> Umjetnost</label>
+            <label><input type="checkbox" value="veterina"> Veterina</label>
+            <label><input type="checkbox" value="zanatske usluge"> Zanatske usluge</label>
+            <label><input type="checkbox" value="zdravstvo"> Zdravstvo</label>
+        </div>
+    </div>
+    <input type="text" placeholder="Grad" class="search-input">
+    <select class="search-select">
+        <option value="" disabled selected>Odaberi vrstu rada</option>
+        <option value="iz-firme">Iz firme</option>
+        <option value="od-kuce">Od kuće</option>
+    </select>
+    <button class="search-button">Traži</button>
+</div>
+
+<!-- Originalna sekcija za prikaz poslova -->
+<div id="jobs-list" class="jobs-list">
+    <!-- Poslovi će biti dinamički ubačeni ovdje -->
+</div>
+
+<script>
+    document.querySelector('.dropdown-label').addEventListener('click', function() {
+        const dropdownContent = document.querySelector('.dropdown-content');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.querySelector('.search-button').addEventListener('click', function() {
+        const categoryElements = document.querySelectorAll('.dropdown-content input:checked'); 
+        const categories = Array.from(categoryElements).map(el => el.value);
+        const city = document.querySelector('.search-input:nth-of-type(2)').value; 
+        const title = document.querySelector('.search-input:nth-of-type(1)').value; 
+        const workType = document.querySelector('.search-select').value; 
+        
+        const url = new URL('search.html', window.location.href);
+        
+        if (categories.length > 0) {
+            url.searchParams.append('category', categories.join(','));
+        }
+        if (city) {
+            url.searchParams.append('location', city);
+        }
+        if (title) {
+            url.searchParams.append('title', title);
+        }
+        if (workType) {
+            url.searchParams.append('workType', workType);
+        }
+
+        window.location.href = url.toString(); 
+    });
+</script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDsxHyLhgO431nUsiDhbB1hEl6kInFyM4M",
+        authDomain: "otta-3cdee.firebaseapp.com",
+        projectId: "otta-3cdee",
+        storageBucket: "otta-3cdee.appspot.com",
+        messagingSenderId: "26438532445",
+        appId: "1:26438532445:web:20c16562dab232ff0abcb4",
+        measurementId: "G-N5ZV6N82X0"
+    };
+
+    // Inicijalizacija Firebase-a
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Funkcija za dohvat poslova i njihovo prikazivanje
+    async function fetchJobs() {
+        const querySnapshot = await getDocs(collection(db, "jobs"));
+        const jobsList = document.getElementById("jobs-list");
+        const premiumJobsList = document.getElementById("premium-jobs-list");
+
+        querySnapshot.forEach((doc) => {
+            const jobData = doc.data();
+            const jobId = doc.id;  // Preuzimanje ID-ja dokumenta
+            const jobItem = document.createElement("div");
+            jobItem.classList.add("job-item");
+
+            jobItem.innerHTML = `
+                <a href="job.html?id=${jobId}">
+                    <img src="${jobData.companyLogo}" alt="Company Logo">
+                    <div class="divider"></div>
+                    <p class="job-title">${jobData.title}</p>
+                    <p class="job-location">${jobData.location}</p>
+                </a>
+            `;
+
+            if (jobData.premium) {
+                premiumJobsList.appendChild(jobItem); // Dodavanje u listu premium poslova
+            } else {
+                jobsList.appendChild(jobItem); // Dodavanje u standardnu listu poslova
+            }
+        });
+
+       // Inicijalizacija slick slidera za premium jobs listu
+$('#premium-jobs-list').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    dots: true,
+    arrows: true,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+});
+
+    }
+
+    // Dohvat i prikaz poslova pri učitavanju stranice
+    fetchJobs();
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unos Poslova</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+
+    <h1>Unos Poslova</h1>
+    <form id="job-form">
+        <label for="title">Opis posla:</label>
+        <input type="text" id="title" name="title"><br><br>
+        
+        <input type="checkbox" id="premium" name="premium">
+        <label for="premium">Premium Job</label><br><br>
+        
+        
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="Administracija">Administracija</option>
+            <option value="Arhitektura">Arhitektura</option>
+            <option value="Bankarstvo">Bankarstvo</option>
+            <option value="Farmacija">Farmacija</option>
+            <option value="Proizvodnja">Proizvodnja</option>
+            <option value="Državna služba">Državna služba</option>
+            <option value="Ekologija">Ekologija</option>
+            <option value="Ekonomija,finansije i računovodstvo">Ekonomija,finansije i računovodstvo</option>
+            <option value="Elektrotehnika">Elektrotehnika</option>
+            <option value="Energetika">Energetika</option>
+            <option value="Grafički dizajn">Grafički dizajn</option>
+            <option value="Građevina">Građevina</option>
+            <option value="IT">IT</option>
+            <option value="Komercijala - Prodaja">Komercijala - Prodaja</option>
+            <option value="Konsalting">Konsalting</option>
+            <option value="Ljepota i zdravlje">Ljepota i zdravlje</option>
+            <option value="Marketing-PR">Marketing-PR</option>
+            <option value="Mediji">Mediji</option>
+            <option value="Menadžment i upravljanje">Menadžment i upravljanje</option>
+            <option value="Nekretnine">Nekretnine</option>
+            <option value="Osiguranje">Osiguranje</option>
+            <option value="Poljoprivreda">Poljoprivreda</option>
+            <option value="Pravo">Pravo</option>
+            <option value="Prevoditeljske usluge">Prevoditeljske usluge</option>
+            <option value="Transport">Transport</option>
+            <option value="Turizam">Turizam</option>
+            <option value="Ugostiteljstvo">Ugostiteljstvo</option>
+            <option value="Umjetnost">Umjetnost</option>
+            <option value="Veterina">Veterina</option>
+            <option value="Zanatske usluge">Zanatske usluge</option>
+            <option value="Zdravstvo">Zdravstvo</option>
+        </select><br><br>
+        
+        <label for="work-type">Work Type:</label>
+<select id="work-type" name="work-type">
+    <option value="Od kuće">Od kuće</option>
+    <option value="Iz firme">Iz firme</option>
+</select><br><br>
+
+
+        <label for="salary">Plata(unijeti iznos):</label>
+        <input type="text" id="salary" name="salary"><br><br>
+        
+        <label for="salary-info">O plati:</label>
+        <input type="text" id="salary-info" name="salary-info"><br><br>
+        
+        <label for="skills">Vjestine(odvoji zagradom):</label>
+        <input type="text" id="skills" name="skills"><br><br>
+        
+        <label for="location">Lokacija:</label>
+        <input type="text" id="location" name="location"><br><br>
+        
+        <label for="company-logo">Logo kompanije:</label>
+        <input type="file" id="company-logo" name="company-logo" accept="image/*" required><br><br>
+        
+        <label for="company-name">Ime kompanije:</label>
+        <input type="text" id="company-name" name="company-name"><br><br>
+        
+        <label for="company-size">Broj uposlenih:</label>
+        <input type="text" id="company-size" name="company-size"><br><br>
+        
+        <label for="role-description">Opis posla</label>
+        <textarea id="role-description" name="role-description"></textarea><br><br>
+        
+        <label for="role-description-details">Nista:</label>
+        <input type="text" id="role-description-details" name="role-description-details"><br><br>
+        
+        <label for="who-you-are">Ko se moze prijaviti:</label>
+        <textarea id="who-you-are" name="who-you-are"></textarea><br><br>
+        
+        <label for="who-you-are-details">nista</label>
+        <input type="text" id="who-you-are-details" name="who-you-are-details"><br><br>
+        
+        <label for="insights">O rastu kompanije:</label>
+        <textarea id="insights" name="insights"></textarea><br><br>
+        
+        <label for="insights-details">nista</label>
+        <input type="text" id="insights-details" name="insights-details"><br><br>
+        
+        <label for="company-description">Nesto o kompaniji:</label>
+        <textarea id="company-description" name="company-description"></textarea><br><br>
+        
+        <label for="company-description-details">nista</label>
+        <input type="text" id="company-description-details" name="company-description-details"><br><br>
+        
+        <label for="ottas-take">Nas izbor i zasto je ta kompanija dobra:</label>
+        <textarea id="ottas-take" name="ottas-take"></textarea><br><br>
+        
+        <label for="ottas-take-details">nista</label>
+        <input type="text" id="ottas-take-details" name="ottas-take-details"><br><br>
+        
+        <button type="submit">Unesi Posao</button>
+    </form>
+
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsxHyLhgO431nUsiDhbB1hEl6kInFyM4M",
+            authDomain: "otta-3cdee.firebaseapp.com",
+            projectId: "otta-3cdee",
+            storageBucket: "otta-3cdee.appspot.com",
+            messagingSenderId: "26438532445",
+            appId: "1:26438532445:web:20c16562dab232ff0abcb4",
+            measurementId: "G-N5ZV6N82X0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        // Form submit event
+        document.getElementById('job-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const form = event.target;
+            const job = {
+    title: form.title.value,
+    premium: form.premium.checked,
+    salary: form.salary.value,
+    salaryInfo: form['salary-info'].value,
+    skills: form.skills.value.split(',').map(skill => skill.trim()),
+    location: form.location.value,
+    companyName: form['company-name'].value,
+    companySize: form['company-size'].value,
+    roleDescription: form['role-description'].value,
+    roleDescriptionDetails: form['role-description-details'].value.split(',').map(desc => desc.trim()),
+    whoYouAre: form['who-you-are'].value,
+    whoYouAreDetails: form['who-you-are-details'].value.split(',').map(desc => desc.trim()),
+    insights: form.insights.value,
+    insightsDetails: form['insights-details'].value.split(',').map(desc => desc.trim()),
+    companyDescription: form['company-description'].value,
+    companyDescriptionDetails: form['company-description-details'].value.split(',').map(desc => desc.trim()),
+    ottasTake: form['ottas-take'].value,
+    ottasTakeDetails: form['ottas-take-details'].value.split(',').map(desc => desc.trim()),
+    category: form.category.value,
+    workType: form['work-type'].value,
+};
+
+
+            try {
+                const imageFile = form['company-logo'].files[0];
+                const imageName = new Date().getTime() + '-' + imageFile.name;
+                const storageRef = ref(storage, 'company_logos/' + imageName);
+                await uploadBytes(storageRef, imageFile);
+                const imageURL = await getDownloadURL(storageRef);
+
+                job.companyLogo = imageURL;
+
+                const docRef = await addDoc(collection(db, "jobs"), job);
+                alert("Job added successfully: " + docRef.id);
+                form.reset();
+            } catch (error) {
+                console.error("Error adding job: ", error);
+                alert("Error adding job: " + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

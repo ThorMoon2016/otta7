@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Jobs</title>
+    <!-- Linkovi na CSS stilove -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Header sa navigacijskim linkovima -->
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <div class="nav-icons">
+            <a class="nav-icon" href="index.html">
+                <span class="material-icons">home</span>
+                <p>Home</p>
+            </a>
+            <a class="nav-icon" href="jobs.html">
+                <span class="material-icons">work</span>
+                <p>Jobs</p>
+            </a>
+            <a class="nav-icon" href="inbox.html">
+                <span class="material-icons">inbox</span>
+                <p>Inbox</p>
+            </a>
+            <a class="nav-icon" href="profile.html">
+                <span class="material-icons">person</span>
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+    <main>
+        <!-- Container za prikaz oglasa -->
+        <div id="jobs-list" class="jobs-list">
+            <!-- Oglasi će biti dinamički ubačeni ovdje -->
+        </div>
+    </main>
+    <!-- Script za Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    
+        // Firebase konfiguracija
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsxHyLhgO431nUsiDhbB1hEl6kInFyM4M",
+            authDomain: "otta-3cdee.firebaseapp.com",
+            projectId: "otta-3cdee",
+            storageBucket: "otta-3cdee.appspot.com",
+            messagingSenderId: "26438532445",
+            appId: "1:26438532445:web:20c16562dab232ff0abcb4",
+            measurementId: "G-N5ZV6N82X0"
+        };
+    
+        // Inicijalizacija Firebase aplikacije
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    
+     // search.html
+// Funkcija za dohvat i prikaz oglasa
+async function fetchJobs() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    const location = urlParams.get('location');
+    const title = urlParams.get('title');
+    const workType = urlParams.get('workType');
+    
+    const querySnapshot = await getDocs(collection(db, "jobs"));
+    const jobsList = document.getElementById("jobs-list");
+    
+    const categories = category ? category.split(',').map(cat => cat.toLowerCase()) : [];
+    
+    querySnapshot.forEach((doc) => {
+        const jobData = doc.data();
+        const jobId = doc.id;  
+    
+        const matchesCategory = categories.length > 0 ? categories.includes(jobData.category.toLowerCase()) : true;
+        const matchesLocation = location ? jobData.location.toLowerCase() === location.toLowerCase() : true;
+        const matchesTitle = title ? jobData.title.toLowerCase().includes(title.toLowerCase()) : true;
+        const matchesWorkType = workType ? jobData.workType.toLowerCase() === workType.toLowerCase() : true;
+    
+        if (matchesCategory && matchesLocation && matchesTitle && matchesWorkType) {
+            const jobItem = document.createElement("div");
+            jobItem.classList.add("job-item");
+    
+            jobItem.innerHTML = `
+                <a href="job.html?id=${jobId}">
+                    <img src="${jobData.companyLogo}" alt="Company Logo">
+                    <div class="divider"></div>
+                    <p class="job-title">${jobData.title}</p>
+                    <p class="job-location">${jobData.location}</p>
+                </a>
+            `;
+    
+            jobsList.appendChild(jobItem); 
+        }
+    });
+}
+// Poziv funkcije za dohvat i prikaz oglasa pri učitavanju stranice
+fetchJobs();
+    </script>
+    
+    
+</body>
+</html>

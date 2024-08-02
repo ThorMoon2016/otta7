@@ -1,0 +1,1139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Onemogućava horizontalno pomeranje */
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0; /* Ukloni padding iz main */
+    flex-grow: 1;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 0; /* Smanji padding iz headera */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.job-container {
+    width: 100%; /* Postavi širinu na 100% */
+    background-color: rgb(236, 236, 21); /* Žuta podloga */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; /* Dodaj padding gore i dole */
+}
+
+.job-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px; /* Maksimalna širina za boxove */
+    width: 100%;
+    padding: 0 20px; /* Unutrašnji padding za boxove */
+}
+
+.logo {
+    height: 50px;
+    margin-left: 200px; /* Pomera logo udesno */
+}
+
+
+
+/* Stilovi za mobilnu verziju */
+@media (max-width: 768px) {
+    .logo {
+        margin-left: 0; /* Pomera logo skroz lijevo */
+    }
+}
+
+
+
+
+
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 150px; /* Pomera ikone ulevo */
+}
+
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px; /* Dodaje razmak između ikona */
+}
+
+.nav-icon .material-icons {
+    font-size: 30px;
+}
+
+.nav-icon p {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+
+
+.nav-icon {
+    text-decoration: none;
+    color: inherit; /* Zadržava boju teksta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px; /* Dodaje razmak između ikona */
+}
+
+
+@media only screen and (max-width: 600px) {
+    .nav-icons {
+        margin-right: 20px; /* Pomera ikone udesno */
+    }
+}
+
+
+.job-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    width: calc(25% - 40px); /* 4 boxa po redu sa marginama */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-description {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.job-number {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .job-box {
+        width: calc(50% - 20px); /* 2 boxa po redu sa marginama */
+        margin: 10px;
+    }
+    
+    .job-number {
+        font-size: 16px;
+        padding: 3px 7px;
+    }
+}
+
+
+
+.premium-section {
+    background-color: rgb(221, 221, 27); /* Plavi wallpaper */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.premium-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.premium-job-box {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.premium-job-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 70%; /* Možeš promijeniti vrijednost u zavisnosti od tvojih potreba */
+    margin: 0 auto; /* Centriranje elementa horizontalno */
+}
+
+
+@media (max-width: 768px) {
+    .premium-job-container {
+        width: 99%; /* Povećava širinu za mobilne uređaje */
+        max-width: none; /* Uklanja maksimalnu širinu kako bi se dozvolilo širenje */
+        padding: 10px; /* Dodaje padding unutar kontejnera, opcionalno */
+        box-sizing: border-box; /* Osigurava da padding ne utiče na ukupnu širinu */
+    }
+}
+
+/* Skriva sve osim aktivnog slajda */
+.premium-job-box {
+    display: none;
+}
+
+.premium-job-box.active {
+    display: block;
+}
+
+
+
+
+/* Stilovi za slider */
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+
+.slider-button {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.slider-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+.premium-job-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.left-column, .right-column {
+    width: 48%; /* Svaka kolona zauzima po 48% širine */
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.premium-job-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.premium-job-salary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.salary-box {
+    background-color: #1E90FF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.salary-info {
+    font-size: 12px;
+    color: gray;
+}
+
+@media (max-width: 768px) {
+    .salary-info {
+        margin-left: 22px;
+    }
+}
+
+
+.premium-job-skills {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.skill-box {
+    background-color: lightgray;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.premium-job-location {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.location-box {
+    background-color: #1E90FF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.premium-job-company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.company-logo {
+    width: 70px; /* Povećaj veličinu slike od firme */
+    height: 70px; /* Povećaj veličinu slike od firme */
+    margin-bottom: 20px; /* Povećaj odmak ispod slike od firme */
+}
+
+
+.company-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.company-size {
+    font-size: 14px;
+    color: gray;
+}
+
+
+@media (max-width: 768px) {
+    .premium-job-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-column {
+        width: 90%; /* Širina left-column-a za mobilne uređaje */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px; /* Razmak između left-column-a i right-column-a */
+    }
+
+    .premium-job-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .premium-job-salary,  .premium-job-location {
+        width: 40%; /* Širina sadržaja unutar left-column-a */
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+
+      .premium-job-location {
+        width: 70%; /* Širina sadržaja unutar left-column-a */
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+     .premium-job-skills {
+        width: 30%; /* Širina sadržaja unutar left-column-a */
+        margin-bottom: 10px;
+    }
+
+    .salary-box, .location-box, .skill-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .company-logo {
+        width: 70px;
+        height: 70px;
+        margin-top: -10px; /* Razmak iznad loga */
+    }
+
+    .right-column {
+        width: 90%; /* Širina right-column-a za mobilne uređaje */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .company-name {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .company-size {
+        font-size: 14px;
+        color: gray;
+        margin-bottom: 10px;
+    }
+
+    .apply-button {
+        width: 100%;
+    }
+}
+
+
+
+.right-column .company-logo {
+    width: 160px; /* Postavite željenu širinu */
+    height: auto; /* Održava omjer stranica slike */
+    display: block; /* Osigurava da slika zauzima cijelu dostupnu širinu */
+    margin-bottom: 10px; /* Razmak ispod slike */
+}
+
+
+
+
+
+/* Siva linija po sredini */
+.premium-job-content::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: gray;
+}
+
+@media (max-width: 768px) {
+    .premium-job-content::before {
+        display: none;
+    }
+}
+
+
+.search-box {
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgba(243, 243, 243, 0.836);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto 20px auto; /* Centriraj i dodaj donji margin */
+    justify-content: center; /* Centriraj unutar flex kontejnera */
+}
+
+.search-input, .search-select {
+    flex: 1 1 calc(50% - 20px); /* Dva elementa po redu */
+    max-width: 250px; /* Dodaj maksimalnu širinu za boxove */
+    padding: 8px; /* Smanji padding */
+    font-size: 14px; /* Smanji font */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+}
+
+.search-select {
+    cursor: pointer;
+}
+
+.search-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s; /* Dodaj efekat tranzicije */
+    flex: 1 1 calc(50% - 20px); /* Dva elementa po redu */
+    max-width: 250px; /* Dodaj maksimalnu širinu za boxove */
+}
+
+.custom-dropdown {
+    flex: 1 1 calc(50% - 20px); /* Dva elementa po redu */
+    max-width: 250px; /* Dodaj maksimalnu širinu za boxove */
+    position: relative;
+}
+
+.dropdown-label {
+    display: block;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-content label:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+/* Stilovi za mobilnu verziju */
+/* Stilovi za mobilnu verziju */
+@media (max-width: 768px) {
+    .search-box {
+        width: 90%; /* Smanji širinu za bolje prilagođavanje mobilnom ekranu */
+        max-width: 100%; /* Ukloni maksimalnu širinu kako bi se pravilno skaliralo */
+        padding: 15px; /* Prilagodi padding za bolje proporcije na manjim ekranima */
+        background-color: rgba(243, 243, 243, 0.836);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column; /* Postavi elemente jedan ispod drugog */
+        gap: 10px;
+        margin: 0 auto 20px auto; /* Centriraj i dodaj donji margin */
+        align-items: center; /* Centrira elemente horizontalno */
+    }
+
+    .search-input, .search-select, .search-button {
+        width: 100%; /* Puni širinu roditeljskog kontejnera */
+        box-sizing: border-box; /* Uklanja padding i border iz širine elementa */
+        padding: 10px; /* Dodaj padding za bolji izgled */
+        margin-bottom: 10px; /* Dodaj razmak između elemenata */
+        border: 1px solid #ccc; /* Dodaj obrub za input i select */
+        border-radius: 5px; /* Zaokruži rubove */
+    }
+
+    .search-button {
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 12px 0; /* Vertikalno centriranje teksta */
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s; /* Dodaj efekat tranzicije */
+    }
+
+    .search-select {
+        cursor: pointer;
+    }
+
+    .custom-dropdown {
+        width: 100%; /* Puni širinu roditeljskog kontejnera */
+        box-sizing: border-box; /* Uklanja padding i border iz širine elementa */
+        border: 1px solid #ccc; /* Dodaj obrub za dropdown */
+        border-radius: 5px; /* Zaokruži rubove */
+        padding: 10px; /* Dodaj padding za bolji izgled */
+        position: relative; /* Potrebno za dropdown sadržaj */
+    }
+
+    .dropdown-label {
+        margin-bottom: 5px; /* Razmak između label i sadržaja dropdowna */
+        font-weight: bold;
+    }
+
+    .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; /* Razmak između checkbox labela */
+        padding-left: 10px; /* Pomak udesno */
+        box-sizing: border-box; /* Osigurava da padding bude uključeno u ukupnu širinu */
+    }
+    
+
+    .dropdown-content label {
+        display: flex;
+        align-items: center; /* Vertikalno centriranje checkboxa i teksta */
+        gap: 5px; /* Razmak između checkboxa i teksta */
+    }
+}
+
+
+/* Stilovi za mobilnu verziju */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Onemogućava horizontalno pomicanje cijele stranice */
+    }
+
+    /* Dodatni stilovi za .search-box i druge elemente ako su potrebni */
+}
+
+
+.search-button:hover {
+    background-color: darkblue;
+}
+
+.dropdown-label {
+    display: block;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 10px;
+    width: calc(100% - 20px);
+    max-width: 230px; /* Maksimalna širina */
+}
+
+.search-select:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.dropdown-content input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
+
+
+
+.job-details-box {
+    background-color: #e6e6e6; /* Pozadinska boja boxa */
+    border-radius: 10px; /* Zaobljeni rubovi */
+    margin-bottom: 20px; /* Razmak između boxova */
+    overflow: hidden; /* Osigurava da se sadržaj ne izlazi izvan boxa */
+    width: 75%; /* Prilagođava širinu boxova */
+    margin: 0 auto 20px auto; /* Centrira boxove */
+}
+
+
+
+/* Stilovi za desktop verziju */
+.left-boxes, .right-boxes {
+    text-align: center; /* Centrira sadržaj unutar divova */
+    display: flex; /* Koristi Flexbox za raspored elemenata */
+    flex-direction: column; /* Postavlja smjer kolone za Flexbox */
+}
+
+/* Stilovi za mobilnu verziju */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Postavlja sve boxeve jedan ispod drugog */
+        align-items: center; /* Centrira boxeve horizontalno */
+    }
+    
+   
+    
+    .left-boxes {
+        margin-left: -175px; /* Pomjeranje lijevih boxeva ulijevo za 20px (prilagodite po potrebi) */
+    }
+
+    .right-boxes {
+        margin-right: 175px; /* Pomjeranje lijevih boxeva ulijevo za 20px (prilagodite po potrebi) */
+    }
+    
+    
+    .job-details-box {
+        margin-bottom: 20px; /* Dodaje razmak između boxeva za bolju preglednost */
+        width: 210%; /* Osigurava da svaki box zauzima punu širinu unutar parent div-a */
+        box-sizing: border-box; /* Uključuje padding i border u ukupnu širinu i visinu elementa */
+    }
+}
+
+
+.box-title {
+    background-color: #ccc; /* Pozadinska boja vrha boxa */
+    color: #ffffff; /* Boja teksta vrha boxa */
+    padding: 10px; /* Unutrašnji padding za tekst vrha boxa */
+    margin: 0; /* Uklanja vanjski margin */
+    width: 100%; /* Širina vrha boxa */
+    border-radius: 10px 10px 0 0; /* Zaobljeni rubovi samo na vrhu */
+}
+
+.box-description {
+    padding: 10px; /* Unutrašnji padding za opis boxa */
+    margin: 0; /* Uklanja vanjski margin */
+    width: 100%; /* Širina opisa boxa */
+    border-radius: 0 0 10px 10px; /* Zaobljeni rubovi samo na dnu */
+    text-align: left; /* Poravnava tekst lijevo */
+    box-sizing: border-box; /* Osigurava da padding i border ne povećavaju širinu elementa */
+}
+
+
+.gray-text {
+    background-color: #ccc; /* Pozadinska boja vrha boxa s sivim tekstom */
+    color: #666666; /* Boja teksta vrha boxa s sivim tekstom */
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.left-boxes,
+.right-boxes {
+    width: 38%; /* Dijele prostor */
+}
+
+
+
+
+
+.job-details-box .box-description {
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .left-boxes {
+        margin-right: -50px; /* Dodaje razmak između lijevih i desnih boxova */
+    }
+    
+    .right-boxes {
+        margin-left: -90px; /* Dodaje razmak između lijevih i desnih boxova */
+    }
+}
+
+/* Stil za novi dio oglasa */
+.ads-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ads-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.ad-box {
+    width: 18%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; /* Visina boxa */
+}
+
+.ad-image {
+    width: 100%;
+    height: 50%; /* Visina slike */
+    object-fit: cover; /* Održava omjer slike */
+}
+
+.ad-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.ad-content::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.ad-content .ad-description {
+    color: blue;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ad-content .ad-location {
+    color: gray;
+    font-size: 0.9em;
+}
+
+
+
+
+
+.jobs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.job-item {
+    width: 80%;
+    max-width: 250px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Omogućuje apsolutno pozicioniranje unutar job-item */
+    height: 220px; /* Fiksna visina za konzistentno pozicioniranje */
+    background-color: #fff;
+    overflow: hidden; /* Sakriva sve što izlazi izvan okvira */
+    margin-left: 30px; /* Pomjera job-item udesno */
+    background-color: #f7f7f7; /* Boja pozadine */
+    text-align: center; /* Centrirajte sadržaj */
+    box-shadow: 0 2px 5px rgba(150, 150, 150, 0.89); /* Sjena ispod kutije */
+    margin-bottom: 20px; /* Dodajte razmak između kutija */
+    border-radius: 10px;
+
+}
+
+/* Stilovi za mobilnu verziju */
+@media (max-width: 768px) {
+    .jobs-list {
+        display: flex;
+        flex-wrap: wrap; /* Omogućava da se boxovi prelomaju na sledeći red ako ne stanu u jedan red */
+        justify-content: space-between; /* Povećava prostor između boxova u jednom redu */
+        padding: 20px; /* Dodaje padding za bolju preglednost */
+    }
+}
+
+/* Stilovi za manju mobilnu verziju */
+@media (max-width: 600px) {
+    .job-item {
+        width: calc(47% - 4px); /* Postavlja širinu boxova tako da budu dva u jednom redu */
+        max-width: none; /* Uklanja maksimalnu širinu */
+        height: 280px; /* Visina boxova će se prilagoditi sadržaju */
+        margin: 0 1px; /* Dodaje 2px margine sa svake strane boxa */
+        padding: 15px; /* Dodaje dodatni razmak unutar boxa */
+        background-color: #f7f7f7; /* Boja pozadine */
+        text-align: center; /* Centriranje sadržaja */
+        box-shadow: 0 2px 5px rgba(150, 150, 150, 0.89); /* Senka ispod boxa */
+        margin-bottom: 1px; /* Razmak između boxova */
+        border-radius: 10px; /* Zaobljeni uglovi */
+    }
+
+    .job-item img {
+        max-height: 40px; /* Smanjuje maksimalnu visinu slike */
+        display: block;
+        margin: 0 auto; /* Centriranje slike unutar boxa */
+    }
+}
+
+
+
+.job-item img {
+    width: 100%; /* Slika će širiti cijelu širinu boxa */
+    height: auto; /* Visina slike će se prilagoditi omjeru stranica */
+    max-height: 100px; /* Maksimalna visina slike, prilagodite prema potrebi */
+    object-fit: cover; /* Slika ispunjava okvir, zadržavajući omjer stranica i izrezujući višak ako je potrebno */
+    display: block; /* Uklanja dodatni prostor ispod slike */
+    margin-bottom: 10px; /* Razmak između slike i dividera, prilagodite prema potrebi */
+}
+
+.job-item .divider {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.job-item .job-location {
+    color: rgb(163, 163, 163);
+    text-align: center;
+    position: absolute;
+    bottom: 5px; /* Razmak od dna boxa */
+}
+
+.job-title {
+    color: rgb(0, 132, 255);
+    text-align: center; /* Centriranje titla */
+    position: absolute;
+    bottom: 30px; /* Razmak od dna boxa, iznad lokacije */
+    left: 0;
+    width: 100%;
+    text-decoration: none; /* Uklanja podvlačenje */
+}
+
+
+
+/* Stiliziranje job-item unutar premium-jobs-list */
+#premium-jobs-list .job-item {
+    width: calc(50% - 20px); /* Prilagodili smo širinu tako da uzimamo u obzir margin */
+    height: 200px; /* Visina posla */
+    box-sizing: border-box;
+    overflow: hidden; /* Izbjegavanje preklapanja sadržaja */
+    margin: 10px; /* Razmak između boxova */
+    background-color: #fff;
+    border-image: linear-gradient(to right, rgb(23, 23, 155), lightblue, rgb(253, 136, 155)) 1;
+    
+}
+
+/* Osiguravanje da slike u job-item budu unutar okvira */
+#premium-jobs-list .job-item img {
+    max-width: 50%; /* Maksimalna širina slike, INDEX */
+    max-height: 80%; /* Maksimalna visina slike */
+    object-fit: contain; /* Prilagodba slike u okvir */
+}
+
+/* Opcionalno, centriranje sadržaja unutar job-item */
+#premium-jobs-list .job-item a {
+    display: flex; /* Postavljanje elementa kao fleksibilnog kontejnera */
+    flex-direction: column; /* Postavljanje smjera kolone za elemente unutar kontejnera */
+    justify-content: center; /* Poravnanje elementa po vertikali */
+    align-items: center; /* Poravnanje elementa po horizontali */
+    height: 50%; /* Visina */
+    text-align: center; /* Poravnanje teksta unutar kontejnera */
+}
+
+#premium-jobs-list .job-item .divider {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(211, 211, 211);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+
+
+.apply-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    text-align: center;
+}
+
+.modal-content form {
+    display: grid;
+    gap: 10px;
+}
+
+.modal-content input,
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+
+
+.modal {
+    display: none; /* Initially hide the modal */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Add this CSS to your style.css file or within a <style> tag in the head of your HTML */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+

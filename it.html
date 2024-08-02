@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+    
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <div class="nav-icons">
+            <a class="nav-icon" href="index.html">
+                <span class="material-icons">home</span>
+                <p>Home</p>
+            </a>
+            <a class="nav-icon" href="jobs.html">
+                <span class="material-icons">work</span>
+                <p>Jobs</p>
+            </a>
+            <a class="nav-icon" href="inbox.html">
+                <span class="material-icons">inbox</span>
+                <p>Inbox</p>
+            </a>
+            <a class="nav-icon" href="profile.html">
+                <span class="material-icons">person</span>
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+
+<main>
+    <div class="job-container">
+        <div class="job-content">
+            <div class="job-box">
+                <p class="job-description">IT</p>
+                <span class="job-number" style="background-color: #FF6347;">1</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Administracija</p>
+                <span class="job-number" style="background-color: #FFD700;">2</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Građevina</p>
+                <span class="job-number" style="background-color: #ADFF2F;">3</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Turizam</p>
+                <span class="job-number" style="background-color: #00FA9A;">4</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Proizvodnja</p>
+                <span class="job-number" style="background-color: #00CED1;">5</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Menadžment</p>
+                <span class="job-number" style="background-color: #1E90FF;">6</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Ugostiteljstvo</p>
+                <span class="job-number" style="background-color: #9370DB;">7</span>
+            </div>
+            <div class="job-box">
+                <p class="job-description">Zdravstvo</p>
+                <span class="job-number" style="background-color: #FF69B4;">8</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<main>
+    <!-- Originalna sekcija za prikaz poslova -->
+    <div id="jobs-list" class="jobs-list">
+        <!-- Poslovi će biti dinamički ubačeni ovdje -->
+    </div>
+</main>
+
+<!-- Firebase SDK i skripta za dohvat IT poslova -->
+<script type="module">
+    // Import Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+     // Firebase configuration
+     const firebaseConfig = {
+            apiKey: "AIzaSyDsxHyLhgO431nUsiDhbB1hEl6kInFyM4M",
+            authDomain: "otta-3cdee.firebaseapp.com",
+            projectId: "otta-3cdee",
+            storageBucket: "otta-3cdee.appspot.com",
+            messagingSenderId: "26438532445",
+            appId: "1:26438532445:web:20c16562dab232ff0abcb4",
+            measurementId: "G-N5ZV6N82X0"
+        };
+
+    // Inicijalizacija Firebase-a
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Funkcija za dohvat IT poslova
+    async function fetchITJobs() {
+        const q = query(collection(db, "jobs"), where("category", "==", "IT"));
+        const querySnapshot = await getDocs(q);
+        const jobsList = document.getElementById("jobs-list");
+
+        querySnapshot.forEach((doc) => {
+            const jobData = doc.data();
+            const jobId = doc.id;
+            const jobItem = document.createElement("div");
+            jobItem.classList.add("job-item");
+
+            jobItem.innerHTML = `
+                <a href="job.html?id=${jobId}">
+                    <img src="${jobData.companyLogo}" alt="Company Logo">
+                    <div class="divider"></div>
+                    <p class="job-title">${jobData.title}</p>
+                    <p class="job-location">${jobData.location}</p>
+                </a>
+            `;
+
+            jobsList.appendChild(jobItem);
+        });
+    }
+
+    // Dohvat i prikaz IT poslova pri učitavanju stranice
+    fetchITJobs();
+</script>
+
+<!-- JavaScript i dodatni CSS (slick-carousel) -->
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+</body>
+</html>

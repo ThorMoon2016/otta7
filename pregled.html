@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregled poslova</title>
+</head>
+<body>
+    <h1>Pregled poslova</h1>
+
+    <div id="jobList">
+        <!-- Ovde će se dinamički generisati lista poslova -->
+    </div>
+
+    <script>
+        // Funkcija za prikazivanje poslova
+        function showJobs() {
+            // Dobijanje poslova iz localStorage
+            var jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+            // Selektovanje elementa gde će se prikazati poslovi
+            var jobList = document.getElementById("jobList");
+
+            // Resetovanje liste poslova
+            jobList.innerHTML = "";
+
+            // Iteriranje kroz sve poslove i dodavanje u listu
+            jobs.forEach(function(job, index) {
+                // Kreiranje elementa za prikaz posla
+                var jobItem = document.createElement("div");
+                jobItem.classList.add("job-item");
+                jobItem.innerHTML = `
+                    <div class="job-title">${job.jobTitle}</div>
+                    <div class="job-salary">${job.salary}</div>
+                    <div class="job-skills">${job.skills}</div>
+                    <div class="job-location">${job.location}</div>
+                    <div class="job-company">${job.companyName} (${job.companySize})</div>
+                    <div class="job-company-logo"><img src="${job.companyLogo}" alt="Company Logo"></div>
+                    <button class="delete-button" onclick="deleteJob(${index})">Briši</button>
+                `;
+
+                // Dodavanje posla u listu
+                jobList.appendChild(jobItem);
+            });
+        }
+
+        // Funkcija za brisanje posla
+        function deleteJob(index) {
+            // Dobijanje poslova iz localStorage
+            var jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+            // Brisanje posla iz liste
+            jobs.splice(index, 1);
+
+            // Ažuriranje localStorage
+            localStorage.setItem("jobs", JSON.stringify(jobs));
+
+            // Ponovno prikazivanje poslova
+            showJobs();
+        }
+
+        // Pozivanje funkcije za prikaz poslova prilikom učitavanja stranice
+        showJobs();
+    </script>
+</body>
+</html>

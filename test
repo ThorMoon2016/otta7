@@ -1,0 +1,338 @@
+u kratkim crtama napisi sta sve vidis ovjde              <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Logo" class="logo">
+        <div class="nav-icons">
+            <a class="nav-icon" href="index.html">
+                <span class="material-icons">home</span>
+                <p>Home</p>
+            </a>
+            <a class="nav-icon" href="jobs.html">
+                <span class="material-icons">work</span>
+                <p>Jobs</p>
+            </a>
+            <a class="nav-icon" href="inbox.html">
+                <span class="material-icons">inbox</span>
+                <p>Inbox</p>
+            </a>
+            <a class="nav-icon" href="profile.html">
+                <span class="material-icons">person</span>
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+
+
+
+
+
+
+    
+    
+
+    
+    <div class="premium-section">
+        <div class="premium-header">Premium Poslovi</div>
+        <div class="slider">
+            <button class="slider-button prev">Prev</button>
+            <div class="premium-job-container">
+                <div class="premium-job-box active">
+                    <div class="premium-job-content">
+                        <div class="left-column">
+                            <div class="premium-job-title">Frontend Engineer</div>
+                            <div class="premium-job-salary">
+                                <div class="salary-box">
+                                    <span class="material-icons">attach_money</span>
+                                    3000KM
+                                </div>
+                                <div class="salary-info">Salary range only for positions in California</div>
+                            </div>
+                            <div class="premium-job-skills">
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    React
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    CSS
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    HTML
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    JavaScript
+                                </div>
+                            </div>
+                            <div class="premium-job-location">
+                                <div class="location-box">
+                                    <span class="material-icons">location_on</span>
+                                    Remote in Canada, EU, UK, US
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-column">
+                            <img src="images/amazon.png" alt="Company Logo" class="company-logo">
+                            <div class="company-name">Company Name</div>
+                            <div class="company-size">1000+ employees</div>
+                        </div>
+                    </div>
+                </div>
+         
+                
+
+                <div class="premium-job-box">
+                    <div class="premium-job-content">
+                        <div class="left-column">
+                            <div class="premium-job-title">Backend Developer</div>
+                            <div class="premium-job-salary">
+                                <div class="salary-box">
+                                    <span class="material-icons">attach_money</span>
+                                    4000KM
+                                </div>
+                                <div class="salary-info">Salary range only for positions in New York</div>
+                            </div>
+                            <div class="premium-job-skills">
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    Node.js
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    Express.js
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    MongoDB
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    JavaScript
+                                </div>
+                            </div>
+                            <div class="premium-job-location">
+                                <div class="location-box">
+                                    <span class="material-icons">location_on</span>
+                                    Remote in US, EU
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-column">
+                            <img src="images/amazon.png" alt="Company Logo" class="company-logo">
+                            <div class="company-name">Google</div>
+                            <div class="company-size">5000+ employees</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-button next">Next</button>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <!-- Lijevi boxevi -->
+        <div class="left-boxes">
+            <!-- Box 1: Role -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Role</div>
+                <div class="box-description">
+                    <p><strong>What the job involves</strong></p>
+                    <ul id="role-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 2: Who you are -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title gray-text">Who you are</div>
+                <div class="box-description">
+                    <ul id="who-you-are-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Desni boxevi -->
+        <div class="right-boxes">
+            <!-- Box 3: Insights -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Insights</div>
+                <div class="box-description">
+                    <ul id="insights-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 4: Company -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Company</div>
+                <div class="box-description">
+                    <ul id="company-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 5: Otta's take -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Otta's take</div>
+                <div class="box-description">
+                    <ul id="ottas-take-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <script src="index.js"></script>
+</body>
+</html>                  document.addEventListener('DOMContentLoaded', function() {
+    const prevButton = document.querySelector('.slider-button.prev');
+    const nextButton = document.querySelector('.slider-button.next');
+    const premiumJobBoxes = document.querySelectorAll('.premium-job-box');
+    let currentIndex = 0;
+
+    const jobDescriptions = [
+        {
+            role: [
+                "We are looking for a full stack software developer with front end focus to build the next generation views in Smartsheet",
+                "You'll work closely with UX designers and product managers",
+                // Ostali opisi...
+            ],
+            whoYouAre: [
+                "2+ years software development experience",
+                "2+ years experience in SaaS application development",
+                "1+ years experience in at least one modern object oriented programming language (Java, C#, Ruby, etc.)",
+                "Experience with modern web technologies, front-end frameworks and integrating with back-end services",
+                "Experience building Single Page Applications at scale",
+                "Successful in an environment with frequent production releases",
+                "Experience writing complex asynchronous code that communicates with multiple services",
+                "A degree in Computer Science, Engineering, or a related field or equivalent practical experience"
+            ],
+            insights: [
+                "Top investors",
+                "Few candidates hear back within 2 weeks",
+                "7% employee growth in 12 months",
+                "Glassdoor (4)",
+                "Glassdoor star iconGlassdoor star iconGlassdoor star iconGlassdoor star iconGlassdoor star icon",
+                "Trustpilot (2)"
+            ],
+            company: [
+                "Ovdje ide nešto o kompaniji."
+            ],
+            ottasTake: [
+                "Ovdje ide neki komentar o kompaniji."
+            ]
+        },
+        {
+            role: [
+                "Backend Developer role involves working on server-side logic, databases, and ensuring high performance and responsiveness to requests from the frontend.",
+                "You will integrate the frontend elements built by your co-workers into the application.",
+                // Ostali opisi...
+            ],
+            whoYouAre: [
+                "3+ years of experience as a Backend Developer",
+                "Strong knowledge of Node.js and frameworks available for it such as Express.js",
+                "Understanding the nature of asynchronous programming and its quirks and workarounds",
+                "Good understanding of server-side templating languages",
+                "Understanding accessibility and security compliance",
+                "User authentication and authorization between multiple systems, servers, and environments"
+            ],
+            insights: [
+                "Strong growth in backend technologies",
+                "Involvement in community projects",
+                "High demand in the US and EU regions",
+                "Glassdoor (4.5)",
+                "Glassdoor star iconGlassdoor star iconGlassdoor star iconGlassdoor star iconGlassdoor star icon",
+                "Trustpilot (4)"
+            ],
+            company: [
+                "Ovdje ide nešto o kompaniji."
+            ],
+            ottasTake: [
+                "Ovdje ide neki komentar o kompaniji."
+            ]
+        }
+    ];
+
+    function updateJobDetails() {
+        const currentJob = jobDescriptions[currentIndex];
+
+        document.getElementById('role-description').innerHTML = currentJob.role.map(desc => `<li>${desc}</li>`).join('');
+        document.getElementById('who-you-are-description').innerHTML = currentJob.whoYouAre.map(desc => `<li>${desc}</li>`).join('');
+        document.getElementById('insights-description').innerHTML = currentJob.insights.map(desc => `<li>${desc}</li>`).join('');
+        document.getElementById('company-description').innerHTML = currentJob.company.map(desc => `<li>${desc}</li>`).join('');
+        document.getElementById('ottas-take-description').innerHTML = currentJob.ottasTake.map(desc => `<li>${desc}</li>`).join('');
+    }
+
+    function showCurrentJob() {
+        premiumJobBoxes.forEach((box, index) => {
+            box.classList.toggle('active', index === currentIndex);
+        });
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === premiumJobBoxes.length - 1;
+        updateJobDetails();
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showCurrentJob();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < premiumJobBoxes.length - 1) {
+            currentIndex++;
+            showCurrentJob();
+        }
+    });
+
+    showCurrentJob();
+});
+
+
+
+
+
+
+
+
+
+
+
+ono sto moras shvatit jeste da je npr jedan posao prikazan kroz premium posao i ispod sto imas lijevu i desnu kutiju, dakle svi podaci su podaci koji se vezu za jedan posao dok se ne klikne na strelicu pa prebaci na iduci posao.              
+posto sam ovo napravio kroz visual studio to znaci da trenutni kod koji imam da bih imao vise oglasa moram svaki rucno unositi u kod i to bi bilo preveliko, pa sada napravi neki localstorage, sada zelim da napravis stranicu unos.html      u kojoj ces napraviti prazne boxove u koje cu moci unijeti detalje sve koje si naveo iz premium poslova poput naziv, plaću, vještine koje su potrebne, lokaciju, logotip kompanije, ime kompanije i veličinu kompanije. onda Lijevi Boxevi: Sadrže informacije o ulozi i o tome kakva osoba je potrebna za taj posao.
+Desni Boxevi: Sadrže uvide o poslu, informacije o kompaniji i neki komentar o kompaniji.              svaku promjenu koju budes pravio moras mi naglasiti na kojoj stranici to radis. jer sam ti poslao jobs.html pa sam ti poslao index.js i sad pravis unos.html.   moras koristiti iste nazive koje vec imam jer mi je stil idealan necu da se poremeti, dakle napraviti boxove prazne na unos.html i kad unesem podatke kliknem na dugme dodaj i svi ti podaci se presele na jobs.html isto onako kao sto sam rucno dosad radio
+
+
+
+
+
+
+
+/* Stilovi za mobilnu verziju */
+@media (max-width: 768px) {
+    body, .container {
+        overflow-x: hidden !important; /* Onemogućava horizontalno pomicanje */
+    }
+}

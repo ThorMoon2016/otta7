@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unos Premium Poslova</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Premium posao -->
+        <div class="premium-section">
+            <div class="premium-header">Unos Premium Posla</div>
+            <div class="slider">
+                <div class="premium-job-container">
+                    <div class="premium-job-box active">
+                        <div class="premium-job-content">
+                            <div class="left-column">
+                                <div class="premium-job-title">Naziv Posla</div>
+                                <div class="premium-job-salary">
+                                    <input type="text" id="job-title-input" placeholder="Unesite naziv posla...">
+                                </div>
+                                <div class="premium-job-skills">
+                                    <input type="text" id="skills-input" placeholder="Unesite vještine potrebne za posao...">
+                                </div>
+                                <div class="premium-job-location">
+                                    <input type="text" id="location-input" placeholder="Unesite lokaciju posla...">
+                                </div>
+                            </div>
+                            <div class="right-column">
+                                <div class="company-details">
+                                    <input type="text" id="company-logo-input" placeholder="Unesite URL logotipa kompanije...">
+                                    <input type="text" id="company-name-input" placeholder="Unesite ime kompanije...">
+                                    <input type="text" id="company-size-input" placeholder="Unesite veličinu kompanije...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lijevi boxevi -->
+        <div class="left-boxes">
+            <!-- Box 1: Role -->
+            <div class="job-details-box">
+                <div class="box-title">Uloga</div>
+                <div class="box-description">
+                    <input type="text" id="role-input" placeholder="Unesite ulogu...">
+                </div>
+            </div>
+            
+            <!-- Box 2: Who you are -->
+            <div class="job-details-box">
+                <div class="box-title gray-text">Tko Ste Vi</div>
+                <div class="box-description">
+                    <textarea id="who-you-are-input" placeholder="Unesite opis osobe koja je potrebna za posao..."></textarea>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Desni boxevi -->
+        <div class="right-boxes">
+            <!-- Box 3: Insights -->
+            <div class="job-details-box">
+                <div class="box-title">Insights</div>
+                <div class="box-description">
+                    <input type="text" id="insights-input" placeholder="Unesite uvide o poslu...">
+                </div>
+            </div>
+            
+            <!-- Box 4: Company -->
+            <div class="job-details-box">
+                <div class="box-title">Kompanija</div>
+                <div class="box-description">
+                    <input type="text" id="company-info-input" placeholder="Unesite informacije o kompaniji...">
+                </div>
+            </div>
+            
+            <!-- Box 5: Otta's take -->
+            <div class="job-details-box">
+                <div class="box-title">Otta's take</div>
+                <div class="box-description">
+                    <textarea id="ottas-take-input" placeholder="Unesite komentar o kompaniji..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="submit-btn">Dodaj Premium Posao</button>
+
+    <script src="index.js"></script>
+</body>
+</html>

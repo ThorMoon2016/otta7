@@ -1,0 +1,166 @@
+ vidis li ovu stranicu          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Logo" class="logo">
+        <div class="nav-icons">
+            <a class="nav-icon" href="index.html">
+                <span class="material-icons">home</span>
+                <p>Home</p>
+            </a>
+            <a class="nav-icon" href="jobs.html">
+                <span class="material-icons">work</span>
+                <p>Jobs</p>
+            </a>
+            <a class="nav-icon" href="inbox.html">
+                <span class="material-icons">inbox</span>
+                <p>Inbox</p>
+            </a>
+            <a class="nav-icon" href="profile.html">
+                <span class="material-icons">person</span>
+                <p>Profile</p>
+            </a>
+        </div>
+    </header>
+
+
+
+    
+    <div class="premium-section">
+        <div class="premium-header">Premium Poslovi</div>
+        <div class="slider">
+            <button class="slider-button prev">Prev</button>
+            <div class="premium-job-container">
+                <div class="premium-job-box active">
+                    <div class="premium-job-content">
+                        <div class="left-column">
+                            <div class="premium-job-title">Frontend Engineer</div>
+                            <div class="premium-job-salary">
+                                <div class="salary-box">
+                                    <span class="material-icons">attach_money</span>
+                                    3000KM
+                                </div>
+                                <div class="salary-info">Salary range only for positions in California</div>
+                            </div>
+                            <div class="premium-job-skills">
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    React
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    CSS
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    HTML
+                                </div>
+                                <div class="skill-box">
+                                    <span class="material-icons">build</span>
+                                    JavaScript
+                                </div>
+                            </div>
+                            <div class="premium-job-location">
+                                <div class="location-box">
+                                    <span class="material-icons">location_on</span>
+                                    Remote in Canada, EU, UK, US
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-column">
+                            <img src="images/amazon.png" alt="Company Logo" class="company-logo">
+                            <div class="company-name">Company Name</div>
+                            <div class="company-size">1000+ employees</div>
+                        </div>
+                    </div>
+                </div>
+         
+                
+
+            </div>
+            <button class="slider-button next">Next</button>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <!-- Lijevi boxevi -->
+        <div class="left-boxes">
+            <!-- Box 1: Role -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Role</div>
+                <div class="box-description">
+                    <p><strong> "We are looking for a full stack software developer with front end focus to build the next generation views in Smartsheet",
+                        "You'll work closely with UX designers and product managers",</strong></p>
+                    <ul id="role-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 2: Who you are -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title gray-text">Who you are</div>
+                <div class="box-description">
+                    <p><strong> "We are looking for a full stack software developer with front end focus to build the next generation views in Smartsheet",
+                        "You'll work closely with UX designers and product managers",</strong></p>
+                    <ul id="who-you-are-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Desni boxevi -->
+        <div class="right-boxes">
+            <!-- Box 3: Insights -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Insights</div>
+                <div class="box-description">
+                    <p><strong> "We are looking for a full stack software developer with front end focus to build the next generation views in Smartsheet",
+                        "You'll work closely with UX designers and product managers",</strong></p>
+                    <ul id="insights-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 4: Company -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Company</div>
+                <div class="box-description">
+                    <p><strong> "We are looking for a full stack software developer with front end focus to build the next generation views in Smartsheet",
+                        "You'll work closely with UX designers and product managers",</strong></p>
+                    <ul id="company-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Box 5: Otta's take -->
+            <div class="job-details-box" data-job="0">
+                <div class="box-title">Otta's take</div>
+                <div class="box-description">
+                    <p><strong> "We are looking for a full stack software developer with front end focus to build the next generation views in Smartsheet",
+                        "You'll work closely with UX designers and product managers",</strong></p>
+                    <ul id="ottas-take-description">
+                        <!-- Ovdje idu opisi specifični za svaki posao -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    
+    <script src="index.js"></script>
+</body>
+</html>
+                                    zelim da napravis novu stranicu unos.html u kojoj cu moci unijeti sva ova polja od premium poslova,  kao i od left i right boxes, i na kraju dugme dodaj i kad sve unesem i kliknem dodaj to ce sve zavrsiti na jobs.html dakle vrlo jednostavno, umjesto sto bih rucno unosio kod na jobs.html  i imao bezbroj linija koda ti ces napravit na unos sva ta polja i kad kliknem dodaj to ce zavrsiti u localstorage i na jobs.html ali zavrsit ce apsolutno isto kao sto i sada izgleda na jobs.html tako da pazi kada koristis sve te nazive da ne pogrijesis jer moraju biti isti kako bi se pojavili isto
